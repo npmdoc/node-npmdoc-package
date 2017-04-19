@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="http://github.com/vesln/package"
-
-    >package (v1.0.1)</a>
+    <a href="http://github.com/vesln/package">package (v1.0.1)</a>
 </h1>
 <h4>Easy package.json exports.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.package">module package</a><ol>
 
@@ -138,7 +131,7 @@
   if (location === Object(location)) {
     location = package.discover(location);
   }
-  return package.read(path.normalize(location + &#x27;/package.json&#x27;));
+  return package.read(path.normalize(location + '/package.json'));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -157,12 +150,12 @@
   var found = null;
 
   while (!found) {
-    if (exists(location + &#x27;/package.json&#x27;)) {
+    if (exists(location + '/package.json')) {
       found = location;
-    } else if (location !== &#x27;/&#x27;) {
+    } else if (location !== '/') {
       location = path.dirname(location);
     } else {
-      throw new Error(&#x27;package.json can not be located&#x27;);
+      throw new Error('package.json can not be located');
     }
   }
 
@@ -181,7 +174,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">read = function (file) {
-  var data = fs.readFileSync(file, &#x27;utf8&#x27;);
+  var data = fs.readFileSync(file, 'utf8');
   return JSON.parse(data);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -205,7 +198,7 @@
   if (location === Object(location)) {
     location = package.discover(location);
   }
-  return package.read(path.normalize(location + &#x27;/package.json&#x27;));
+  return package.read(path.normalize(location + '/package.json'));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -224,12 +217,12 @@
   var found = null;
 
   while (!found) {
-    if (exists(location + &#x27;/package.json&#x27;)) {
+    if (exists(location + '/package.json')) {
       found = location;
-    } else if (location !== &#x27;/&#x27;) {
+    } else if (location !== '/') {
       location = path.dirname(location);
     } else {
-      throw new Error(&#x27;package.json can not be located&#x27;);
+      throw new Error('package.json can not be located');
     }
   }
 
@@ -248,7 +241,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">read = function (file) {
-  var data = fs.readFileSync(file, &#x27;utf8&#x27;);
+  var data = fs.readFileSync(file, 'utf8');
   return JSON.parse(data);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -263,3 +256,4 @@
     ]
 </div>
 </div>
+</body></html>

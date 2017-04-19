@@ -63,6 +63,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.package.package">
+            function <span class="apidocSignatureSpan"></span>package
+            <span class="apidocSignatureSpan">(location)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.package.discover">
             function <span class="apidocSignatureSpan">package.</span>discover
             <span class="apidocSignatureSpan">(module)</span>
@@ -81,10 +90,59 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.package.package">module package.package</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.package.package.package">
+            function <span class="apidocSignatureSpan">package.</span>package
+            <span class="apidocSignatureSpan">(location)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.package.package.discover">
+            function <span class="apidocSignatureSpan">package.package.</span>discover
+            <span class="apidocSignatureSpan">(module)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.package.package.read">
+            function <span class="apidocSignatureSpan">package.package.</span>read
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.package" id="apidoc.module.package">module package</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.package.package" id="apidoc.element.package.package">
+        function <span class="apidocSignatureSpan"></span>package
+        <span class="apidocSignatureSpan">(location)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">package = function (location) {
+  if (location === Object(location)) {
+    location = package.discover(location);
+  }
+  return package.read(path.normalize(location + &#x27;/package.json&#x27;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
     <h2>
@@ -118,6 +176,73 @@
     <h2>
         <a href="#apidoc.element.package.read" id="apidoc.element.package.read">
         function <span class="apidocSignatureSpan">package.</span>read
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">read = function (file) {
+  var data = fs.readFileSync(file, &#x27;utf8&#x27;);
+  return JSON.parse(data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.package.package" id="apidoc.module.package.package">module package.package</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.package.package.package" id="apidoc.element.package.package.package">
+        function <span class="apidocSignatureSpan">package.</span>package
+        <span class="apidocSignatureSpan">(location)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">package = function (location) {
+  if (location === Object(location)) {
+    location = package.discover(location);
+  }
+  return package.read(path.normalize(location + &#x27;/package.json&#x27;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.package.package.discover" id="apidoc.element.package.package.discover">
+        function <span class="apidocSignatureSpan">package.package.</span>discover
+        <span class="apidocSignatureSpan">(module)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">discover = function (module) {
+  var location = path.dirname(module.filename);
+  var found = null;
+
+  while (!found) {
+    if (exists(location + &#x27;/package.json&#x27;)) {
+      found = location;
+    } else if (location !== &#x27;/&#x27;) {
+      location = path.dirname(location);
+    } else {
+      throw new Error(&#x27;package.json can not be located&#x27;);
+    }
+  }
+
+  return found;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.package.package.read" id="apidoc.element.package.package.read">
+        function <span class="apidocSignatureSpan">package.package.</span>read
         <span class="apidocSignatureSpan">(file)</span>
         </a>
     </h2>
